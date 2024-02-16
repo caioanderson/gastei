@@ -1,5 +1,5 @@
 import { RFValue } from 'react-native-responsive-fontsize';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
   width: 100%;
@@ -18,7 +18,9 @@ export const Content = styled.View`
 `;
 
 export const TextButton = styled.Text`
-  color: ${({ theme }) => theme.COLORS.GRAY_900};
-  font-size: ${({ theme }) => RFValue(theme.FONT_SIZE.MD)}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+  ${({ theme }) => css`
+    color: ${theme.COLORS.GRAY_900};
+    font-size: ${RFValue(theme.FONT_SIZE.MD)}px;
+    font-family: ${theme.FONT_FAMILY.BOLD};
+  `}
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
@@ -20,9 +20,11 @@ export const WrapperLogo = styled.View`
 `;
 
 export const LabelLogo = styled.Text`
-  color: ${({ theme }) => theme.COLORS.GRAY_100};
-  font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.EXTRA_BOLD};
+  ${({ theme }) => css`
+    color: ${theme.COLORS.GRAY_100};
+    font-size: ${theme.FONT_SIZE.MD}px;
+    font-family: ${theme.FONT_FAMILY.EXTRA_BOLD};
+  `}
 `
 
 export const WrapperMessage = styled.View`
@@ -32,18 +34,19 @@ export const WrapperMessage = styled.View`
 `;
 
 export const Message = styled.Text`
-  color: ${({ theme }) => theme.COLORS.GRAY_100};
-  font-size: ${({ theme }) => RFValue(theme.FONT_SIZE.XXL)}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.MEDIUM};
-  text-align: center;
-  line-height: 40px;
-  align-items: flex-end;
+  ${({ theme }) => css`
+    color: ${theme.COLORS.GRAY_100};
+    font-size: ${RFValue(theme.FONT_SIZE.XXL)}px;
+    font-family: ${theme.FONT_FAMILY.MEDIUM};
+    text-align: center;
+    line-height: 40px;
+    align-items: flex-end;
+  `}
 `;
 
 export const Footer = styled.View`
   flex: .3;
   background-color: ${({ theme }) => theme.COLORS.BRAND_SECONDARY_MID};
-
   position: relative;
   `;
 
